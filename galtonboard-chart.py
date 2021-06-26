@@ -18,7 +18,10 @@ for h in range((levels)**2*100):
 print((levels)**2*100, "balls were used in totall")
 print(lanes)
 
-X = np.arange(-((len(lanes)/2)-.5), (len(lanes)/2)+.5)
+if len(lanes)%2==0:
+    X = np.arange(-((len(lanes)/2)-1), (len(lanes)/2)+1)
+else:
+    X = np.arange(-((len(lanes)/2)-.5), (len(lanes)/2)+.5)
 plt.suptitle('Galton Board')
 plt.bar(X + 0.00, lanes, width=0.25)
 plt.savefig('galtonboard.png')
